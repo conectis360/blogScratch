@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class BlogPost(models.Model):
@@ -8,3 +9,6 @@ class BlogPost(models.Model):
         'auth.User', 
         on_delete=models.CASCADE
     )
+    
+    def __str__(self):
+        return self.title

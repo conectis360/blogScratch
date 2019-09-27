@@ -4,9 +4,11 @@
         <title> Teste </title>
     </head>
 
+{% block content %}
     <body>
-        {{ BlogPost.title }}
-        {{ BlogPost.text_body }}
+        <h1>{{ blogpost.title }}</h1>
+        <p>{{ blogpost.text_body }}</p>
     </body>
+{% endblock %}
 
 </html>
