@@ -1,13 +1,16 @@
+{% extends 'base.html' %}
 <html>
 
     <head>
-        <title> Teste </title>
+        {% block title %}{{ blogpost.title }}{% endblock title %}
     </head>
 
 {% block content %}
     <body>
         <h1>{{ blogpost.title }}</h1>
-        <p>{{ blogpost.text_body }}</p>
+        <div class='"col-md-6"'>
+            <p>{{ blogpost.text_body }}</p>
+        </div>
     </body>
 {% endblock %}
 
