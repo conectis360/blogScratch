@@ -10,7 +10,10 @@ class BlogTag(models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=60)
     text_body = models.TextField()
+    description = models.TextField(max_length=100)
     tags = models.ManyToManyField(BlogTag, blank=True)
+    pub_date = models.DateTimeField(auto_now=True)
+
     escritor = models.ForeignKey(
         'auth.User', 
         on_delete=models.CASCADE

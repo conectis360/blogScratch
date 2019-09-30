@@ -1,0 +1,39 @@
+{% extends 'home_base.html' %}
+{% load static %}
+
+<html>
+
+    <head>
+        {% block title %}J.G Blog{% endblock title %}
+
+        <style>
+
+        </style>
+    </head>
+
+{% block content %}
+    <body>
+        <h1>Posts</h1>
+        <div id="posts">
+            {% for post in object_list %}
+                <ul>
+                    <li style="list-style-type: none;">
+                        <div class="card" style="width: 12rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body" style="">
+                            <h5 class="card-title"><h6>{{ post.pub_date|date }}</h6> - {{ post.title }}</h5>
+                            <p class="card-text">{{post.description}}</p>
+                            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read</a>
+                    </div>
+                    </li>
+                </ul>
+            {% empty %}
+                <li> No posts yet. </li>
+            {% endfor %}
+        </div>
+    </div>
+
+    </body>
+{% endblock %}
+
+</html>

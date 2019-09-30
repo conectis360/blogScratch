@@ -8,4 +8,10 @@ urlpatterns = [
         views.BlogView.as_view(),
         name='post_detail'
     ),
+    
+    path(
+        '',
+        views.HomePageView.as_view(),
+        name='home'
+    )
 ]
