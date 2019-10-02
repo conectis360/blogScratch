@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+    
+    <head>
+        
+            <title>{% block title %}{% endblock title %}</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #site {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        /* Position the navbar container inside the image */
+
+        /* The navbar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            margin-bottom: 120px;
+            
+        }
+
+        .container {
+            position: absolute;
+            margin: 20px;
+            width: auto;
+            background:rgba(255,255,255,.1);
+            border-radius:5px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #999999;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+
+            color: white;
+        }
+
+    </style>
+    
+    </head>
+
+
+    
+        <body>
+            <div class='bg-img'>
+                <div class='topnav'>
+                    <div class='container'>
+                    <nav class="navbar justify-content-center ">
+                        <a class="navbar-brand" href="#">
+                            <img src="{% static "blog/j.png" %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                            James Garcia Blog
+                        </a>
+                        <a class="nav-link" href="#">Ativo</a>
+                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Link</a>
+                    </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class='justify-content-center' id="site">
+                <div class=''>
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </body>
+    
+
+</html>

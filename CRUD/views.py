@@ -9,6 +9,12 @@ class BlogView(DetailView):
     model = BlogPost
     template_name = 'post_detail.html'
     
+    def get_context_data(self, **kwargs):
+        context = super(BlogView , self).get_context_data(**kwargs)
+        context['posts'] = BlogPost.objects.all()
+        return context
+
+    
 class HomePageView(ListView):
     model = BlogPost
     template_name = 'home.html'
