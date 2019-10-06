@@ -3,14 +3,27 @@
 
     <head>
         {% block title %}{{ blogpost.title }}{% endblock title %}
+
+        <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+
+
+        <style>
+
+
+
+        </style>
+
     </head>
 
 {% block content %}
     <body>
+    {% block posttitle %}
+        <h1 class='post-title '>{{ blogpost.title }}</h1>
+    {% endblock %}
     {% block post %}
-        <h1>{{ blogpost.title }}</h1>
         <div id="post">
-            <p>{{ blogpost.text_body }}</p>
+            <p class='post-body'>{{ blogpost.text_body }}</p>
         </div>
     {% endblock %}
         <div>
